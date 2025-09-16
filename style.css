@@ -1,0 +1,244 @@
+/* --- CSS Variables for Easy Customization --- */
+:root {
+    --bg-color: #0d1117; /* GitHub Dark Blue */
+    --card-color: rgba(22, 27, 34, 0.75); /* Semi-transparent card */
+    --accent-color: #58a6ff; /* GitHub Blue */
+    --glow-color: rgba(88, 166, 255, 0.5);
+    --text-color: #c9d1d9;
+    --text-secondary: #8b949e;
+    --font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* --- Basic Setup & Custom Scrollbar --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-family);
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.7;
+    overflow-x: hidden;
+}
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-track {
+    background: var(--bg-color);
+}
+::-webkit-scrollbar-thumb {
+    background-color: var(--accent-color);
+    border-radius: 10px;
+}
+
+/* --- Technical Particle Background --- */
+#particles-js {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1; /* Place it behind all content */
+}
+
+.container {
+    max-width: 1000px;
+    margin: 4rem auto;
+    padding: 0 2rem;
+}
+
+/* --- Navigation Bar (Glassmorphism) --- */
+nav {
+    background: rgba(13, 17, 23, 0.6);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid #30363d;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-color);
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+.nav-links a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: var(--accent-color);
+}
+
+/* --- Hero Section (Home Page) --- */
+.hero {
+    text-align: center;
+    padding: 6rem 0;
+}
+.hero h1 {
+    font-size: 3.8rem;
+    font-weight: 700;
+    color: #fff;
+    text-shadow: 0 0 15px var(--glow-color);
+    margin-bottom: 0.5rem;
+}
+.hero .tagline {
+    font-size: 1.3rem;
+    color: var(--text-secondary);
+    margin-bottom: 2.5rem;
+}
+.btn {
+    display: inline-block;
+    background-color: var(--accent-color);
+    color: var(--bg-color);
+    padding: 14px 28px;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 700;
+    transition: all 0.3s ease;
+    border: 2px solid var(--accent-color);
+}
+.btn:hover {
+    background-color: transparent;
+    color: var(--accent-color);
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px var(--glow-color);
+}
+
+/* --- General Section Styles --- */
+.section-title {
+    text-align: center;
+    font-size: 2.8rem;
+    color: white;
+    margin-bottom: 3rem;
+    font-weight: 700;
+}
+.about-text {
+    text-align: center;
+    font-size: 1.1rem;
+    max-width: 700px;
+    margin: 0 auto;
+    color: var(--text-secondary);
+}
+
+/* --- Skills & Projects Grid (Glassmorphism Cards) --- */
+.skills-grid, .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.skill-item {
+    background-color: var(--card-color);
+    backdrop-filter: blur(10px);
+    border: 1px solid #30363d;
+    text-align: center;
+    padding: 1.2rem;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+}
+.skill-item:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent-color);
+}
+
+.project-card {
+    background-color: var(--card-color);
+    backdrop-filter: blur(10px);
+    border: 1px solid #30363d;
+    padding: 2rem;
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--accent-color);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+}
+
+.project-card h3 {
+    margin-top: 0;
+    color: var(--accent-color);
+    font-size: 1.5rem;
+}
+
+.project-card .tech-stack {
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+}
+
+/* --- Resume & Contact Pages --- */
+.resume-section .btn, .contact-section {
+    background-color: var(--card-color);
+    backdrop-filter: blur(10px);
+    border: 1px solid #30363d;
+    padding: 3rem;
+    border-radius: 10px;
+}
+.resume-section .btn {
+    display: block;
+    width: fit-content;
+    margin: 0 auto 3rem auto;
+    padding: 14px 28px;
+}
+.contact-section {
+    text-align: center;
+}
+.contact-links p {
+    margin: 1rem 0;
+    font-size: 1.2rem;
+}
+.contact-links a {
+    color: var(--accent-color);
+    text-decoration: none;
+    font-weight: 600;
+    transition: text-shadow 0.3s ease;
+}
+.contact-links a:hover {
+    text-shadow: 0 0 10px var(--glow-color);
+}
+.resume-category h3 {
+    color: var(--accent-color);
+    border-bottom: 2px solid #30363d;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+}
+.resume-project {
+    margin-top: 1.5rem;
+}
+.resume-project h4 {
+    color: var(--text-color);
+    font-size: 1.1rem;
+}
+.resume-category p {
+    color: var(--text-secondary);
+}
+
+/* --- Responsive Design --- */
+@media (max-width: 768px) {
+    .nav-links { display: none; } /* On smaller screens, you'd add a hamburger menu */
+    .hero h1 { font-size: 2.5rem; }
+    .hero .tagline { font-size: 1rem; }
+}
